@@ -40,7 +40,7 @@ public class Trader {
   public void onOrderExecuted(final Order order) {
     if (this.outstandingOrders.contains(order)) {
 
-      Logger.info("Executed Order %s from Trader %s", order.getId(), id);
+      Logger.info("Executed Order %s from Trader %s", id, order.getId());
 
       this.outstandingOrders.remove(order);
     }

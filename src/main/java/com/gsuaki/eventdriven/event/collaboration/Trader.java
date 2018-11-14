@@ -42,7 +42,7 @@ public class Trader implements MessageBus.ExecutionHandler {
   public void onOrderExecuted(final Order order) {
     if (this.outstandingOrders.contains(order)) {
 
-      Logger.info("Trader %s - Order %s executed", order.getId(), id);
+      Logger.info("Trader %s - Order %s executed", id, order.getId());
 
       this.outstandingOrders.remove(order);
     }
