@@ -31,6 +31,8 @@ public class Trader {
   public void placeOrder(final String stock, final Double amount, final String exchange) {
     final Order order = new Order(stock, amount, this);
 
+    Logger.info("Trader %s - Published Order %s for Exchange %s", id, order.getId(), exchange);
+
     this.outstandingOrders.add(order);
     ServiceLocator.exchangeFor(exchange).onOrderReceive(order);
   }

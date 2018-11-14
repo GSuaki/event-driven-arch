@@ -9,6 +9,8 @@ public final class EventCaseRunner {
     final Trader traderOne = new Trader("Gabriel");
     final Trader traderTwo = new Trader("Peter");
 
+    Logger.info("");
+
     new StockExchange("NASDAQ");
 
     traderOne.placeOrder("MELI", 5000D, "Dow Jones");

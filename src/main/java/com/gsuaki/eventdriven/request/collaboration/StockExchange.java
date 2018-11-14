@@ -30,8 +30,6 @@ public class StockExchange {
   }
 
   public void execute() {
-    Logger.info("Executing out standing orders from %s", id);
-
     getOutstandingOrders()
         .stream()
         .limit(3)

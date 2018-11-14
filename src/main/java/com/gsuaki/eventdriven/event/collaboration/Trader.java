@@ -32,6 +32,8 @@ public class Trader implements MessageBus.ExecutionHandler {
   public void placeOrder(final String stock, final Double amount, final String exchange) {
     final Order order = new Order(stock, amount, exchange, this);
 
+    Logger.info("Trader %s - Published Order %s for Exchange %s", id, order.getId(), exchange);
+
     this.outstandingOrders.add(order);
     MessageBus.publishToOrders(order);
   }
